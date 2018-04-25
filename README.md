@@ -17,6 +17,19 @@
 - `npm test` - run all tests and execute coverage report
 - `npm run test:watch` - run all tests in watch mode
 
-## How to use it
+## Technology stack:
 
-### Tell people how to use it
+Yes, this is a VERY opinionated starter. It's not for everyone to use, and it definitely won't fit all projects requirements. If your project is rather simple and has few resouces/screens, this may not be worth the while. However, if it's a larger project and you know or are willing/interested in learning all technologies, it will make your life a lot prettier.
+
+ - Node environment: ES6, Webpack with HMR, ESLint and Stylelint
+ - E2E testing with [Cypress](https://www.cypress.io/) (Coming up)
+ - Unit testing with [Jest](https://facebook.github.io/jest/)
+ - State management with [redux](https://redux.js.org/)
+ - Redux development flavor by [reduxsauce](https://github.com/infinitered/reduxsauce)
+ - Persistence with [redux-persist](https://github.com/rt2zz/redux-persist) (Coming up)
+ - Side effects with [redux-sagas](https://github.com/redux-saga/redux-saga)
+ - More flavor by [apisauce](https://github.com/infinitered/apisauce)
+
+## How to use it
+
+What's in here? Surely your project must do some interesting things. Write them up in here.
