@@ -10,7 +10,6 @@ const config = {
   entry: [
     './main.js',
     './assets/scss/main.scss',
-    'babel-polyfill',
   ],
 
   context: resolve(__dirname, 'src'),
