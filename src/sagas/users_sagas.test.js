@@ -3,25 +3,25 @@ import API from '../services/api'
 import UsersActions from '../redux/users_redux'
 import { fetchUsers } from './users_sagas'
 
-const stepper = (fn) => (mock) => fn.next(mock).value
+const stepper = fn => mock => fn.next(mock).value
 const api = API.create()
 
 describe('Given the fetchUsers saga', () => {
   let response
 
   beforeAll(() => {
-    return api.getUsers().then(res => {
+    return api.getUsers().then((res) => {
       response = res
     })
   })
 
-  it('first calls API', () => {
+  test('first calls API', () => {
     const step = stepper(fetchUsers(api))
 
     expect(step()).toEqual(call(api.getUsers))
   })
 
-  it('follows success path', () => {
+  test('follows success path', () => {
     const step = stepper(fetchUsers(api))
 
     // first step (calls API)
@@ -37,8 +37,8 @@ describe('Given the fetchUsers saga', () => {
     expect(stepResponse).toEqual(put(UsersActions.fetchUsersSuccess(payload)))
   })
 
-  it('follows failure path', () => {
-    const response = { ok: false, problem: 'SERVER_ERROR' }
+  test('follows failure path', () => {
+    response = { ok: false, problem: 'SERVER_ERROR' }
     const step = stepper(fetchUsers(api))
 
     // first step (calls API)

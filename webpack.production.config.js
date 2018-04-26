@@ -10,9 +10,10 @@ const config = {
   entry: [
     './main.js',
     './assets/scss/main.scss',
+    'babel-polyfill',
   ],
 
-  context: resolve(__dirname, 'app'),
+  context: resolve(__dirname, 'src'),
 
   output: {
     filename: 'bundle.js',
@@ -23,7 +24,7 @@ const config = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new HtmlWebpackPlugin({
-      template: `${__dirname}/app/index.html`,
+      template: `${__dirname}/src/index.html`,
       filename: 'index.html',
       inject: 'body',
     }),
